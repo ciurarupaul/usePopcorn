@@ -14,25 +14,6 @@ export default function App() {
 	const [error, setError] = useState("");
 	const [selectedId, setSelectedId] = useState(null);
 
-	/*
-  useEffect(function () {
-    console.log("After initial render");
-  }, []);
-
-  useEffect(function () {
-    console.log("After every render");
-  });
-
-  useEffect(
-    function () {
-      console.log("D");
-    },
-    [query]
-  );
-
-  console.log("During render");
-*/
-
 	function handleSelectMovie(id) {
 		setSelectedId((selectedId) => (id === selectedId ? null : id));
 	}
@@ -328,7 +309,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 			async function getMovieDetails() {
 				setIsLoading(true);
 				const res = await fetch(
-					`http://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`
+					`htts://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`
 				);
 				const data = await res.json();
 				setMovie(data);
